@@ -40,6 +40,7 @@ body * {
   width: 290px;
   margin: auto;
   margin-top: 55px;
+  max-width: 585px;
 }
 
 #profile {
@@ -88,11 +89,15 @@ img {
   position: absolute;
   z-index: 1;
   left: 0;
+  animation: slide-back 0.5s forwards;
+}
+
+#switch button:hover {
+  outline: 10px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.5s forwards;
 }
 
 #switch span {
@@ -162,4 +167,22 @@ ul li a:hover {
   text-align: center;
   font-size: 12px;
   margin-top: 20px;
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
